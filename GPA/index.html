@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<script src="script.js"></script>    
+<title>GPA Calculator</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+ 
+</head>
+<body>
+    <section>
+     
+     <h1>GPA Calculator</h1>
+    
+     <form>
+     <input type="text" id="cr" placeholder="Course Code"><br>
+     <br>
+     <input type="number" id="mr" placeholder="Grade"><br>
+     <br>
+     <input type="number" id="ch" placeholder="Credit">
+
+     </form>
+     <br>
+     <button onclick="addRecord()">Add a record</button>
+     <br>
+     <br>
+     <button onclick="refreshElement()">Clear</button>
+ <center>  
+     <p id="error"><p>
+ <table>
+     <tr>
+         <td class="r" id="cn1"></td>
+         <td class="r" id="ch1"></td>        
+         <td class="r" id="cm1"></td>
+         <td class="r" id="gr1"></td>
+         <td class="r" id="gp1"></td>
+         <td class="r" id="tp1"></td>
+         
+
+     <tr>
+         <td class="rt" id="Scn">Total Grades</td>
+         <td class="rt" id="tcr"></td>
+         <td class="rt" id="t"></td>
+         <td class="rt"></td>
+         <td class="rt"></td>
+         <td class="rt" id="tpo"></td>
+        
+
+     </tr>
+     <tr>
+         <td class="rt" id="cgpa"></td>
+         
+     </tr>
+    
+ </table>
+ 
+ 
+ </center>
+  </section>
+      
+      <script>
+    
+    displayCourses();
+    
+    </script>
+ 
+</body>
+
+</html>
