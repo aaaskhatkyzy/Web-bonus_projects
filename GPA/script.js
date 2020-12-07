@@ -1,5 +1,5 @@
 course=[];
-mark =[];
+grades =[];
 chour=[];
 tpoint=[];
 
@@ -21,18 +21,18 @@ for (i=0; i<course.length; i++)
  {
 
 
-tpoint[i]=(chour[i] * M2G(mark[i])[1]).toFixed(2);
+tpoint[i]=(chour[i] * M2G(grades[i])[1]).toFixed(2);
 
 cn1 = cn1 + course[i] + "\n";
 ch1 = ch1 + chour[i] + "\n";
-cm1 = cm1 + mark[i] + "\n";
-gr1 = gr1 + M2G(mark[i])[0] + "\n";
-gp1 = gp1 + M2G(mark[i])[1] + "\n";
+cm1 = cm1 + grades[i] + "\n";
+gr1 = gr1 + M2G(grades[i])[0] + "\n";
+gp1 = gp1 + M2G(grades[i])[1] + "\n";
 tp1 = tp1 + tpoint[i] + "\n";
  
 
 
-total = total + parseInt(mark[i]);
+total = total + parseInt(grades[i]);
 totalcredits = totalcredits + parseInt(chour[i]);
 totalpoints = totalpoints + parseFloat(tpoint[i]);
 
@@ -58,7 +58,7 @@ document.getElementById("cgpa").innerText="GPA = " + (totalpoints/totalcredits).
 
 function refreshElement(){
 	course=[];
-    mark =[];
+    grades =[];
     chour=[];
     tpoint=[];
     displayCourses();
@@ -78,7 +78,7 @@ function elementObj(id){
 	m = document.getElementById("mr").value;
 	cc = document.getElementById("ch").value;
 	course[course.length] = c;
-	mark[mark.length] = m;
+	grades[grades.length] = m;
 	chour[chour.length]= cc;
     }
     displayCourses();
@@ -150,13 +150,13 @@ function M2G(m){
 }
 
 function validation(){
-	studentmark = parseInt(document.getElementById("mr").value);
+	studentgrades = parseInt(document.getElementById("mr").value);
 	coursecredit = parseInt(document.getElementById("ch").value);
-    if(studentmark<100 && studentmark>=0 && coursecredit>0)
+    if(studentgrades<100 && studentgrades>=0 && coursecredit>0)
 	{
     document.getElementById("error").innerText= "";
 	return (true);
     }
 	else
-	document.getElementById("error").innerText= "Please make sure you enter marks between 0 and 100 and credit hours 0 or above";
+	document.getElementById("error").innerText= "Please make sure you enter grades between 0 and 100 and credit hours 0 or above";
 }
